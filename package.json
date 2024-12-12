@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "A cross-platform Electron React application",
   "main": "public/electron.js",
+  "author": "appShare1603",
+  "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -16,13 +18,20 @@
   "build": {
     "appId": "com.vegan.app",
     "productName": "Vegan",
+    "asar": true,
+    "extends": null,
     "files": [
       "build/**/*",
       "node_modules/**/*",
-      "public/electron.js"
+      "package.json",
+      "public/**/*"
     ],
     "directories": {
-      "buildResources": "assets"
+      "buildResources": "assets",
+      "output": "dist"
+    },
+    "extraMetadata": {
+      "main": "public/electron.js"
     },
     "mac": {
       "category": "public.app-category.utilities",
@@ -43,7 +52,6 @@
       "releaseType": "release"
     }
   },
-  "author": "",
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.11.1",
