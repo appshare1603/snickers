@@ -1,0 +1,73 @@
+{
+  "name": "vegan",
+  "version": "1.0.0",
+  "description": "A cross-platform Electron React application",
+  "main": "public/electron.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "npm run build",
+    "preelectron-build": "npm run build",
+    "electron-build": "electron-builder -mwl"
+  },
+  "build": {
+    "appId": "com.vegan.app",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "public/electron.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.20",
+    "@mui/icons-material": "^5.14.20",
+    "chart.js": "^4.4.1",
+    "react-chartjs-2": "^5.2.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "electron-is-dev": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^27.1.0",
+    "electron-builder": "^24.6.4",
+    "wait-on": "^7.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
