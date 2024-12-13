@@ -24,7 +24,7 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/vegan.git
+git clone https://github.com/appshare1603/vegan.git
 cd vegan
 ```
 
